@@ -116,12 +116,10 @@ public class ServerMain {
 					}
 					return r;
 				})
-				.map(r -> {
-					return ResponseEntity
-									.status(HttpStatus.OK)
-									.contentType(MediaType.APPLICATION_JSON)
-									.body(r);
-						}
+				.map(r -> ResponseEntity
+						.status(HttpStatus.OK)
+						.contentType(MediaType.APPLICATION_JSON)
+						.body(r)
 				)
 				.onErrorResume(e -> {
 					// Debugging.
