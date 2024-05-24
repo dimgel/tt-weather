@@ -42,7 +42,7 @@ public class ServerMain {
 		}
 		if (useProviders.isEmpty()) {
 			// I just don't want to write "throws InvalidArgumentException" at method's signature.
-			// For discussion: (1) Scala does not require "throws" clause; (2) I never needed more than 4 exception classes.
+			// For discussion: (1) Scala does not have checked exceptions; (2) I never needed more than 4 exception classes.
 			throw new RuntimeException("Unknown weather.provider=" + useProvider + " in application.properties");
 		}
 	}
