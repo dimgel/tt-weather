@@ -104,6 +104,15 @@ public class WeatherApiCom implements Provider {
 						}
 						x.data.add(row);
 					}
+
+					// Debugging: testing that providers run simultaneously.
+//					try {
+//						Thread.sleep(3000);
+//					} catch (InterruptedException e) {
+//						throw new RuntimeException(e);
+//					}
+//					System.out.println("WeatherApiCom done");
+
 					return x;
 				})
 				.onErrorResume(e -> {

@@ -186,6 +186,15 @@ public class WeatherYandexRu implements Provider {
 									}
 									x.data.add(row);
 								}
+
+								// Debugging: testing that providers run simultaneously.
+//								try {
+//									Thread.sleep(3000);
+//								} catch (InterruptedException e) {
+//									throw new RuntimeException(e);
+//								}
+//								System.out.println("WeatherYandexRu done");
+
 								return x;
 							});
 							// I hope .onErrorResume() is NOT needed here, because we're inside flatMap(),

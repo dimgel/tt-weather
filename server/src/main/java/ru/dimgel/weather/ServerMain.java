@@ -56,6 +56,9 @@ public class ServerMain {
 			@RequestParam(value = "city", defaultValue = "") String city,
 			@RequestParam(value = "period", defaultValue = "day") String period
 	) {
+		// Debugging: testing that providers run simultaneously.
+//		System.out.println("Started");
+
 		// ...even incorporate param checks into async processing. The point is to handle all errors uniformly in the end.
 		record Params0(String city, String period) {}
 		record Params(String city, Period period) {}
