@@ -129,7 +129,7 @@ public class ServerMain {
 					var r = new Response();
 					r.error = e.getMessage();
 					return Mono.just(ResponseEntity
-							.status(e instanceof WebError ? HttpStatus.BAD_REQUEST : HttpStatus.INTERNAL_SERVER_ERROR)
+							.status(e instanceof WebError ? ((WebError)e).getStatus() : HttpStatus.INTERNAL_SERVER_ERROR)
 							.contentType(MediaType.APPLICATION_JSON)
 							.body(r)
 					);
