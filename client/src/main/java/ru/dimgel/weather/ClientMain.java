@@ -54,6 +54,7 @@ public class ClientMain {
 				})
 				.onRawStatus(s -> s >= 400, re -> {
 					var i = re.statusCode().value();
+					// TODO !!! block() inside worker thread won't work.
 					System.err.format("Error %d: %s\n%s\n", i, HttpStatus.valueOf(i).getReasonPhrase(), re.bodyToMono(String.class).block());
 					return Mono.empty();
 				})
